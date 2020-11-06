@@ -1,0 +1,30 @@
+<div class="container">
+    <label>Id Employee:</label>
+    <input type="number" [(ngModel)]="idEmployee"><br>
+
+    <button type="button" (click)="getEmployees()">Get employees</button>
+
+    <div *ngIf="isArray == true">
+        <div class="card" style="width: 18rem;" *ngFor="let employee of employees">
+            <div class="card-body">
+                <h5 class="card-title">{{employee.name}}</h5>
+                <p class="card-text"><span>Contract type:</span> {{employee.contractTypeName}}</p>
+                <p class="card-text"><span>Annual Salary:</span> {{employee.annualSalary |currency}}</p>
+                <p class="card-text"><span>Role name:</span> {{employee.roleName}}</p>
+                <p class="card-text"><span>Role description:</span> {{employee.roleDescription}}</p>
+            </div>
+        </div>
+    </div>
+
+    <div *ngIf="isArray == false">
+        <div class="card-body">
+            <h5 class="card-title">{{employee.name}}</h5>
+            <p class="card-text"><span>Contract type:</span> {{employee.contractTypeName}}</p>
+            <p class="card-text"><span>Annual Salary:</span> {{employee.annualSalary |currency}}</p>
+            <p class="card-text"><span>Role name:</span> {{employee.roleName}}</p>
+            <p class="card-text"><span>Role description:</span> {{employee.roleDescription}}</p>
+        </div>
+    </div>
+
+
+</div>
